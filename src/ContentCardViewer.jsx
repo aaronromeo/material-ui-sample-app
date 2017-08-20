@@ -9,6 +9,7 @@ import Avatar from 'material-ui/Avatar';
 import grey from 'material-ui/colors/grey';
 
 import ContentCardViewerHeader from './ContentCardViewerHeader';
+import IntegrationAutosuggest from './IntegrationAutosuggest';
 
 const styles = theme => ({
   root: {
@@ -108,10 +109,13 @@ class ContentCardViewer extends Component {
           src="https://upload.wikimedia.org/wikipedia/commons/4/47/Mumbai_workers_Victor_Grigas_Random_Shots-9.jpg"
           alt="Muscle Man" />
         </div>
-        <div>
+        <div style={{flex: "1 1 auto"}}>
           <Typography component="title">
             This is a Mumbai worker flexing like a bauss. <span role="img" aria-label="photo">📷</span> by Victor Grigas.
           </Typography>
+        </div>
+        <div style={{flex: "1 1 auto"}}>
+          <IntegrationAutosuggest />
         </div>
 
       </Paper>
