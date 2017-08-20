@@ -1,22 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import Button from 'material-ui/Button';
+
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import createPalette from 'material-ui/styles/palette';
+// import purple from 'material-ui/colors/purple';
+// import green from 'material-ui/colors/green';
+// import red from 'material-ui/colors/red';
+import Typography from 'material-ui/Typography';
+
+import AppGrid from './AppGrid.js';
+
+const theme = createMuiTheme(
+// {
+//   palette: createPalette({
+//     primary: purple, // Purple and green play nicely together.
+//     accent: {
+//       ...green,
+//       A400: '#00e677',
+//     },
+//     error: red,
+//   }),
+// }
+);
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <div>
-          <Button raised>
-            Hello World
-          </Button>
-          <img src={logo} alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <MuiThemeProvider theme={theme}>
+        <span>
+          <Typography type="display4" gutterBottom>MaterialUI Demo</Typography>
+          <AppGrid/>
+        </span>
+      </MuiThemeProvider>
     );
   }
 }
