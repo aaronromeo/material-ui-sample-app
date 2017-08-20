@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import createPalette from 'material-ui/styles/palette';
+// import createPalette from 'material-ui/styles/palette';
 // import purple from 'material-ui/colors/purple';
 // import green from 'material-ui/colors/green';
 // import red from 'material-ui/colors/red';

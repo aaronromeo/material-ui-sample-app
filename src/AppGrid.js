@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Grid from 'material-ui/Grid';
-// import List, { ListItem, ListItemText } from 'material-ui/List';
 import Column from './Column';
+import ContentCardViewer from './ContentCardViewer';
 
 const styles = theme => ({
   root: {
@@ -14,7 +13,6 @@ const styles = theme => ({
 
 class AppGrid extends Component {
   render() {
-    const classes = this.props.classes;
     return (
       <Grid container spacing={8} align="stretch" >
         <Grid item xs={3}>
@@ -24,14 +22,11 @@ class AppGrid extends Component {
           <Column title="Pending" cards={[1,2,3,4,5]} />
         </Grid>
         <Grid item xs={6}>
+          <ContentCardViewer />
         </Grid>
       </Grid>
     );
   }
 }
-
-AppGrid.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(AppGrid);

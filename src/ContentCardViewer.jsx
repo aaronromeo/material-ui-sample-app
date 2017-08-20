@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import { withStyles } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
-import ColumnHeader from './ColumnHeader';
-import CardList from './CardList';
+
+import ContentCardViewerHeader from './ContentCardViewerHeader';
 
 const styles = theme => ({
   root: {
@@ -17,23 +18,20 @@ const styles = theme => ({
   },
 });
 
-class Column extends Component {
+class ContentCardViewer extends Component {
   render() {
-    const {classes, cards, title} = this.props;
+    const {classes} = this.props;
 
     return (
       <Paper className={classes.paper}>
-        <ColumnHeader title={title} />
-        <CardList cards={cards} />
+        <ContentCardViewerHeader />
       </Paper>
     );
   }
 }
 
-Column.propTypes = {
+ContentCardViewer.propTypes = {
   classes: PropTypes.object.isRequired,
-  cards: PropTypes.array.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
-export default withStyles(styles)(Column);
+export default withStyles(styles)(ContentCardViewer);

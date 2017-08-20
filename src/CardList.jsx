@@ -5,7 +5,7 @@ import ContentCard from './ContentCard';
 
 class CardList extends Component {
   cardElements() {
-    const {classes, cards} = this.props;
+    const {cards} = this.props;
 
     return cards.map(card => {
       return (
@@ -24,7 +24,6 @@ class CardList extends Component {
 }
 
 CardList.propTypes = {
-  classes: PropTypes.object.isRequired,
   cards: PropTypes.arrayOf(String).isRequired,
 };
 
