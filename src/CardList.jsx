@@ -7,10 +7,13 @@ import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import Avatar from 'material-ui/Avatar';
 import Button from 'material-ui/Button';
+import Grid from 'material-ui/Grid';
+import Chip from 'material-ui/Chip';
 // import List, { ListItem, ListItemText } from 'material-ui/List';
 import grey from 'material-ui/colors/grey';
 import yellow from 'material-ui/colors/yellow';
-import green from 'material-ui/colors/green';
+import lightGreen from 'material-ui/colors/lightGreen';
+import blue from 'material-ui/colors/blue';
 
 const styles = theme => ({
   card: {
@@ -41,11 +44,39 @@ const styles = theme => ({
     justifyContent: 'space-between',
   },
   button1: {
-    color: green,
+    color: yellow[700],
+    flex: "1 1 auto",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    borderColor: grey[200],
   },
   button2: {
-    color: yellow,
-  }
+    color: lightGreen['A400'],
+    flex: "1 1 auto",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    borderColor: grey[200],
+  },
+  chipPublished: {
+    margin: theme.spacing.unit / 2,
+    borderRadius: '10%',
+    backgroundColor: blue[700],
+    color: '#FFF',
+  },
+  chipPending: {
+    margin: theme.spacing.unit / 2,
+    borderRadius: '10%',
+    borderWidth: "1px",
+    borderStyle: "solid",
+    borderColor: blue[700],
+    backgroundColor: '#FFF',
+    color: blue[700],
+  },
+  chipRow: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    flexWrap: 'wrap',
+  },
 });
 
 class CardList extends Component {
@@ -65,6 +96,18 @@ class CardList extends Component {
               This impressive paella is a perfect party dish and a fun meal to cook together with
               your guests. Add 1 cup of frozen peas along with the mussels, if you like.
             </Typography>
+            <div className={classes.chipRow}>
+              <Chip
+                label="NFL"
+                key="NFL"
+                className={classes.chipPublished}
+              />
+              <Chip
+                label="Ravens"
+                key="Ravens"
+                className={classes.chipPending}
+              />
+            </div>
           </CardContent>
           <CardHeader
             avatar={
@@ -78,12 +121,12 @@ class CardList extends Component {
             subheader="September 14, 2016"
             classes={{ content: classes.content }}
           />
-          <div>
+          <div style={{display: 'flex', justifyContent: 'space-evenly', alignItems: 'stretch'}}>
             <Button classes={{root: classes.button1}}>
-              BUTTON 1
+              ✖ Unpublish
             </Button>
             <Button classes={{root: classes.button2}}>
-              BUTTON 2
+              ✔ Publish
             </Button>
           </div>
         </Card>
