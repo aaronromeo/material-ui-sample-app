@@ -9,7 +9,7 @@ class CardList extends Component {
 
     return cards.map(card => {
       return (
-        <ContentCard card={card} />
+        <ContentCard key={card} card={card} />
       )
     })
   }

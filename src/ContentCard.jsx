@@ -79,9 +79,8 @@ class ContentCard extends Component {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography component="p">
-            This impressive paella is a perfect party dish and a fun meal to cook together with
-            your guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          <Typography component="title">
+            This is a Mumbai worker flexing like a bauss. <span role="img" aria-label="photo">📷</span> by Victor Grigas.
           </Typography>
           <div className={classes.chipRow}>
             <Chip
