@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
-import Chip from 'material-ui/Chip';
+// import Chip from 'material-ui/Chip';
 import { MenuItem } from 'material-ui/Menu';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
@@ -141,6 +141,13 @@ class IntegrationAutosuggest extends Component {
     });
   };
 
+  handleOnBlur = (event) => {
+    console.log("handleOnBlur");
+    // this.setState({
+    //   value: newValue,
+    // });
+  };
+
   render() {
     const { classes } = this.props;
 
@@ -165,6 +172,7 @@ class IntegrationAutosuggest extends Component {
           placeholder: 'Search for a resource or topic',
           value: this.state.value,
           onChange: this.handleChange,
+          onBlur: this.handleOnBlur,
         }}
       />
     );
